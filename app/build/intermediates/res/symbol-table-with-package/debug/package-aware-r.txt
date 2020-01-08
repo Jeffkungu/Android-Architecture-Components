@@ -1086,6 +1086,8 @@ id dimensions
 id direct
 id disableHome
 id edit_query
+id edtSum1
+id edtSum2
 id end
 id enterAlways
 id enterAlwaysCollapsed

@@ -11,11 +11,14 @@ import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.EditText;
 import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity {
     MainActivityViewModel mainActivityViewModel;
     private TextView textView;
+    private EditText edtSum1;
+    private EditText edtSum2;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -27,21 +30,27 @@ public class MainActivity extends AppCompatActivity {
         mainActivityViewModel = ViewModelProviders.of(this).get(MainActivityViewModel.class);
 
         textView=findViewById(R.id.tvCount);
+        textView.setText(String.valueOf(mainActivityViewModel.getCurrentSum()));
+        edtSum1=findViewById(R.id.edtSum1);
+        edtSum2=findViewById(R.id.edtSum2);
 
-        LiveData<Integer> count = mainActivityViewModel.getInitialCount();
+//        LiveData<Integer> count = mainActivityViewModel.getInitialCount();
+//
+//        count.observe(this, new Observer<Integer>() {
+//            @Override
+//            public void onChanged(@Nullable Integer integer) {
+//                textView.setText("Count is: "+integer);
+//            }
+//        });
 
-        count.observe(this, new Observer<Integer>() {
-            @Override
-            public void onChanged(@Nullable Integer integer) {
-                textView.setText("Count is: "+integer);
-            }
-        });
-
-        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
+        FloatingActionButton fab = findViewById(R.id.fab);
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                mainActivityViewModel.getCurrentCount();
+                Integer val1 = Integer.parseInt(edtSum1.getText().toString());
+                Integer val2 = Integer.parseInt(edtSum2.getText().toString());
+                mainActivityViewModel.add(val1, val2);
+                textView.setText(String.valueOf(mainActivityViewModel.getCurrentSum()));
             }
         });
     }
