@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.androidtutz.anushka.lifecycledemo">
+    package="com.anushka.androidtutz.contactmanager">
 
     <application
         android:allowBackup="true"

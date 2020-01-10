@@ -1,7 +1,7 @@
 #Internal package file, do not edit.
-#Thu Jan 09 11:45:45 EAT 2020
+#Mon Oct 01 16:26:13 IST 2018
 0.baseType=DIRECTORY
-0.base=/Users/jeffkungu/AndroidProjects/Android-Architecture-Components/app/build/intermediates/transforms/dexMerger/debug/0
+0.base=D\:\\Anushka\\RoomDB\\ContactManager\\app\\build\\intermediates\\transforms\\dexMerger\\debug\\0
 0.path=classes.dex
 0.set=DEX
 count=1
