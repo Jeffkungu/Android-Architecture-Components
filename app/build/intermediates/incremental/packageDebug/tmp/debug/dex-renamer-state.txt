@@ -1,4 +1,4 @@
-#Mon Oct 01 16:26:12 IST 2018
-base.0=D\:\\Anushka\\RoomDB\\ContactManager\\app\\build\\intermediates\\transforms\\dexMerger\\debug\\0
+#Tue Jan 14 14:22:22 EAT 2020
+base.0=/Users/jeffkungu/AndroidProjects/Android-Architecture-Components/app/build/intermediates/dex/debug/mergeDexDebug/out/classes.dex
 path.0=classes.dex
 renamed.0=classes.dex

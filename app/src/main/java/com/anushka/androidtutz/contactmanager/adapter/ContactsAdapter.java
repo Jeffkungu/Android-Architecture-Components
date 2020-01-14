@@ -1,7 +1,7 @@
 package com.anushka.androidtutz.contactmanager.adapter;
 
 import android.content.Context;
-import android.support.v7.widget.RecyclerView;
+import androidx.recyclerview.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -20,21 +20,6 @@ public class ContactsAdapter extends RecyclerView.Adapter<ContactsAdapter.MyView
     private Context context;
     private ArrayList<Contact> contactssList;
     private MainActivity mainActivity;
-
-    public class MyViewHolder extends RecyclerView.ViewHolder {
-
-        public TextView name;
-        public TextView emil;
-
-
-        public MyViewHolder(View view) {
-            super(view);
-            name = view.findViewById(R.id.name);
-            emil = view.findViewById(R.id.email);
-
-        }
-    }
-
 
     public ContactsAdapter(Context context, ArrayList<Contact> contacts, MainActivity mainActivity) {
         this.context = context;
@@ -64,7 +49,6 @@ public class ContactsAdapter extends RecyclerView.Adapter<ContactsAdapter.MyView
 
             @Override
             public void onClick(View v) {
-
                 mainActivity.addAndEditContacts(true, contact, position);
             }
         });
@@ -75,6 +59,20 @@ public class ContactsAdapter extends RecyclerView.Adapter<ContactsAdapter.MyView
     public int getItemCount() {
 
         return contactssList.size();
+    }
+
+    public class MyViewHolder extends RecyclerView.ViewHolder {
+
+        public TextView name;
+        public TextView emil;
+
+
+        public MyViewHolder(View view) {
+            super(view);
+            name = view.findViewById(R.id.name);
+            emil = view.findViewById(R.id.email);
+
+        }
     }
 
 
