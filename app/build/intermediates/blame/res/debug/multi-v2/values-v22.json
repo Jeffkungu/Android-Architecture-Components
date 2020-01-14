@@ -4,7 +4,7 @@
             "outputFile": "/Users/jeffkungu/AndroidProjects/Android-Architecture-Components/app/build/intermediates/incremental/mergeDebugResources/merged.dir/values-v22/values-v22.xml",
             "map": [
                 {
-                    "source": "/Users/jeffkungu/.gradle/caches/transforms-2/files-2.1/6119d746697059b7e1b74aab4d181f56/appcompat-1.1.0/res/values-v22/values-v22.xml",
+                    "source": "/Users/jeffkungu/.gradle/caches/transforms-1/files-1.1/appcompat-v7-28.0.0.aar/faf7f475daa7b038032a954523621197/res/values-v22/values-v22.xml",
                     "from": {
                         "startLines": "2,3,4,9",
                         "startColumns": "4,4,4,4",
