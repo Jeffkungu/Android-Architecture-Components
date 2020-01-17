@@ -1,4 +1,4 @@
-package com.anushka.androidtutz.bindingdemo1;
+package com.example.hp.studentregister;
 
 import android.content.Context;
 import android.support.test.InstrumentationRegistry;
@@ -21,6 +21,6 @@ public class ExampleInstrumentedTest {
         // Context of the app under test.
         Context appContext = InstrumentationRegistry.getTargetContext();
 
-        assertEquals("com.anushka.androidtutz.bindingdemo1", appContext.getPackageName());
+        assertEquals("com.example.hp.studentregister", appContext.getPackageName());
     }
 }

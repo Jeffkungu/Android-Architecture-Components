@@ -1,4 +1,4 @@
-package com.anushka.androidtutz.bindingdemo1;
+package com.example.hp.studentregister;
 
 import org.junit.Test;
 
