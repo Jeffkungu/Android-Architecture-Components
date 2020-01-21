@@ -28,7 +28,7 @@
             android:layout_marginRight="8dp"
             android:layout_marginBottom="8dp"
             android:text="@string/submit_button"
-            android:onClick="@{buttonClickedHandler.buttonClicked}"
+            android:onClick="@{buttonClickedHandler::buttonClicked}"
             android:textColorLink="@color/colorPrimaryDark"
             android:textSize="25sp"
             app:layout_constraintBottom_toBottomOf="parent"

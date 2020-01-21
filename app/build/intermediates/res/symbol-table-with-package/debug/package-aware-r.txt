@@ -1120,6 +1120,7 @@ id italic
 id item_touch_helper_previous_elevation
 id labeled
 id largeLabel
+id layout_content_main
 id left
 id line1
 id line3

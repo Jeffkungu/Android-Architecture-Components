@@ -1,7 +1,9 @@
 package com.example.hp.studentregister;
 
 import android.arch.persistence.room.Room;
+import android.content.Context;
 import android.content.Intent;
+import android.databinding.DataBindingUtil;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
@@ -17,6 +19,8 @@ import android.view.View;
 import android.view.Menu;
 import android.view.MenuItem;
 
+import com.example.hp.studentregister.databinding.ActivityMainBinding;
+
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
@@ -25,6 +29,8 @@ public class MainActivity extends AppCompatActivity {
     private StudentAppDatabase studentAppDatabase;
     private ArrayList<Student> students;
     private StudentDataAdapter studentDataAdapter;
+    private ActivityMainBinding activityMainBinding;
+    private  MainActivityEventHandler mainActivityEventHandler;
     public static final int NEW_STUDENT_ACTIVITY_REQUEST_CODE=1;
 
 
@@ -35,7 +41,11 @@ public class MainActivity extends AppCompatActivity {
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
-        RecyclerView recyclerView=findViewById(R.id.rvStudents);
+        mainActivityEventHandler = new MainActivityEventHandler(this);
+        activityMainBinding = DataBindingUtil.setContentView(this, R.layout.activity_main);
+        activityMainBinding.setEventHandler(mainActivityEventHandler);
+
+        RecyclerView recyclerView=activityMainBinding.layoutContentMain.rvStudents;
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
         recyclerView.setHasFixedSize(true);
 
@@ -44,7 +54,6 @@ public class MainActivity extends AppCompatActivity {
 
         studentAppDatabase= Room.databaseBuilder(getApplicationContext(), StudentAppDatabase.class,"StudentDB")
                             .build();
-
         loadData();
 
         new ItemTouchHelper(new ItemTouchHelper.SimpleCallback(0,ItemTouchHelper.LEFT) {
@@ -62,18 +71,6 @@ public class MainActivity extends AppCompatActivity {
 
             }
         }).attachToRecyclerView(recyclerView);
-
-
-
-
-        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
-        fab.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-               Intent intent=new Intent(MainActivity.this,AddNewStudentActivity.class);
-               startActivityForResult(intent,NEW_STUDENT_ACTIVITY_REQUEST_CODE);
-            }
-        });
     }
 
     @Override
@@ -103,6 +100,19 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
+    public class MainActivityEventHandler{
+        private Context context;
+
+        public MainActivityEventHandler(Context context) {
+            this.context = context;
+        }
+
+        public  void fabClicked(View view){
+            Intent intent=new Intent(MainActivity.this,AddNewStudentActivity.class);
+            startActivityForResult(intent,NEW_STUDENT_ACTIVITY_REQUEST_CODE);
+        }
+    }
+
     void loadData(){
 
         new GetAllStudentsAsyncTask().execute();
@@ -125,8 +135,6 @@ public class MainActivity extends AppCompatActivity {
             studentDataAdapter.setStudents(students);
         }
     }
-
-
 
     private void deleteStudent(Student student){
 

@@ -1,4 +1,4 @@
-#Thu Jan 16 14:27:44 EAT 2020
+#Tue Jan 21 09:37:45 EAT 2020
 base.0=/Users/jeffkungu/AndroidProjects/Android-Architecture-Components/app/build/intermediates/transforms/dexMerger/debug/0
 path.0=classes.dex
 renamed.0=classes.dex
