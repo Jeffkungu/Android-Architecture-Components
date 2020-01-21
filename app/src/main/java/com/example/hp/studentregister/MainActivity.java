@@ -45,7 +45,7 @@ public class MainActivity extends AppCompatActivity {
         activityMainBinding = DataBindingUtil.setContentView(this, R.layout.activity_main);
         activityMainBinding.setEventHandler(mainActivityEventHandler);
 
-        RecyclerView recyclerView=activityMainBinding.layoutContentMain.rvStudents;
+        RecyclerView recyclerView = activityMainBinding.layoutContentMain.rvStudents;
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
         recyclerView.setHasFixedSize(true);
 
